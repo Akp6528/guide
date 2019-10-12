@@ -1,0 +1,38 @@
+
+#include<iostream>
+using namespace std;
+
+
+int palin(int n) {
+    int p, a,rev = 0;
+	a = n;
+    do{
+        p = n%10;
+		rev = (rev * 10) + p;
+		n = n/10;	
+	} while(n>0);
+	if(rev == a)
+	return 1;
+	else
+	return 0;
+}
+
+
+
+int main() {
+	int q;
+	cin>>q;
+	for(int j =0; j<q; j++){
+		int k;
+		cin>>k;
+		int i = k+1;
+		while(1){
+			int d = palin(i);
+			if(d==1)
+			break;
+			i++;
+		}
+		cout<<i<<"\n";
+	}
+return 0;	 
+}
